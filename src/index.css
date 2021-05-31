@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.bg-rojo {
+  background: rgb(208, 76, 72);
+  background: linear-gradient(
+    90deg,
+    rgba(208, 76, 72, 1) 25%,
+    rgba(219, 69, 46, 1) 50%,
+    rgba(190, 78, 63, 1) 91%
+  );
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn-rojo{
+  background: rgb(208, 76, 72);;
+  color:white;
+}
+
+.login{
+  max-width: 400px;
+}
+
+.vh-100{
+  min-height: 100vh;
+}
+
+.superheroe{
+  width: 98%;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 40px;
+}
+
+.icono{
+  max-width: 32px;
+  height:32px;
+}
+
+.alerta{
+  position: sticky;
+  top: 0px;
+  padding: 20px;
+  font-size: 1.4em;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Para que aparezca abajo de todo el footer */
+.principal{
+  min-height: calc(100vh - 71px);
+}
+
+
+@media (min-width:576px) {
+  .superheroe{
+   width: 48%;
+  }
+}
+
+
+@media (min-width:968px) {
+  .superheroe{
+   width: 23%;
+  }
 }

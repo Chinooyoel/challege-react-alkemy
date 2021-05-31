@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./componentes/vistas/Login";
+import AlertaState from "./context/alerta/alertaState";
+import AuthState from "./context/autenticacion/authState";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Home from "./componentes/vistas/Home";
+import SuperheroesState from "./context/superheroes/superheroesState";
+import Listado from "./componentes/vistas/Listado";
+import Perfil from "./componentes/vistas/Perfil";
+import RutaPrivada from "./componentes/RutaPrivada";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SuperheroesState>
+      <AlertaState>
+        <AuthState>
+          <Router>
+            <Switch>
+              <Route path="/login" component={Login}/>
+              <RutaPrivada path="/superheroe/listado" component={Listado}/>
+              <RutaPrivada path="/superheroe/perfil/:id" component={Perfil}/>
+              <RutaPrivada path="/" component={Home}/>
+            </Switch>
+          </Router>
+        </AuthState>
+      </AlertaState>
+    </SuperheroesState>
   );
 }
 
